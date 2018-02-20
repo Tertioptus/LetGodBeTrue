@@ -5,6 +5,12 @@
 		<description>let God be true, but every man a liar; as it is written... Romans 3:4</description>
 		<language>en-us</language>
 		<link>http://letgodbetrue.com/</link>
+		<itunes:image href="https://github.com/Tertioptus/LetGodBeTrue/raw/master/Let_God_be_True_.png"/>
+        <image>
+          <url>https://github.com/Tertioptus/LetGodBeTrue/raw/master/Let_God_be_True_.png</url>
+          <title>Let God Be True!</title>
+          <link>http://letgodbetrue.com/</link>
+        </image>
 		<item>
 			<title>Intro preceeding  sermon:  Gospel of John (103)</title>
 			<description>12:25-30 for true discipleship; Jesus foresaw His death; God promised glory.</description>
