@@ -31,6 +31,6 @@ package com.tertioptus;
 public class Default {
 
 	public static UrlReceptionist UrlReceptionist() {
-		return new PropertiesUrlReceptionist();
+		return new QualifyingUrlReceptionist(new PropertiesUrlReceptionist());
 	}
 }
