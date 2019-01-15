@@ -1,5 +1,5 @@
 /**
- *  Prafet - automated cash flow (or illustration) system
+ *  LetGodBeTrue.com Podcast
  *  Copyright (C) 2019 Benjamin F. Paige III (benpaigeiii@hotmail.com)
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,8 @@
 package com.tertioptus;
 
 /**
- * TODO describe responsibility
+ * 
+ * Handles incoming URL, for future usage.
  *
  * @assertion
  * <pre> 
@@ -30,6 +31,18 @@ package com.tertioptus;
  */
 public interface UrlReceptionist {
 	
+	/**
+	 * 
+	 * Provides requested URL.
+	 *
+	 * @assertion
+	 * <pre> 
+	 * 	TODO implement method example 
+	 * </pre>
+	 *
+	 * @return
+	 * @throws Exception
+	 */
 	String url() throws Exception;
 
 }

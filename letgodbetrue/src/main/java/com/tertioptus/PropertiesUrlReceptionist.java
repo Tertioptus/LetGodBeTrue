@@ -1,5 +1,5 @@
 /**
- *  Prafet - automated cash flow (or illustration) system
+ *  LetGodBeTrue.com Podcast
  *  Copyright (C) 2019 Benjamin F. Paige III (benpaigeiii@hotmail.com)
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * TODO describe responsibility
+ * Handles incoming URL from local properties.
  *
  * @assertion
  * <pre> 
@@ -40,13 +40,6 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 	
 
 	/**
-	 * TODO describe
-	 *
-	 * @assertion
-	 * <pre> 
-	 * 	TODO implement method assertion
-	 * </pre>
-	 *
 	 * @see com.tertioptus.UrlReceptionist#url()
 	 */
 	@Override
