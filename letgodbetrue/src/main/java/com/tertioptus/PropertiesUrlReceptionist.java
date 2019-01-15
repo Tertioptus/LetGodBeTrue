@@ -19,6 +19,8 @@ package com.tertioptus;
 
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * TODO describe responsibility
@@ -32,7 +34,9 @@ import java.util.Properties;
  * @since Jan 14, 2019
  */
 public class PropertiesUrlReceptionist implements UrlReceptionist {
-	
+
+    private final static Logger LOGGER =  
+                Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
 	
 
 	/**
@@ -55,6 +59,8 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 		inpStream = this.getClass().getClassLoader().getResourceAsStream("config.properties");
 		 
 		props.load(inpStream);
+		
+		LOGGER.log(Level.INFO, "PropertiesUrlReceptionist: URL has been received");
 		 
 		} finally {
 		 
