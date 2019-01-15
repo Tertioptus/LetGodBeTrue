@@ -33,9 +33,11 @@ import java.util.logging.Logger;
  * @author Benjamin F. Paige III
  * @since Jan 14, 2019
  */
-public class PropertiesUrlReceptionist implements UrlReceptionist {
+public class PropertiesUrlReceptionist extends Properties implements UrlReceptionist {
 
-    private final static Logger LOGGER =  
+	private static final long serialVersionUID = 1L;
+	
+	private final static Logger LOGGER =  
                 Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
 	
 
@@ -44,14 +46,13 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 	 */
 	@Override
 	public String url() throws Exception {
-		Properties props = new Properties();
 		InputStream inpStream = null;
 		 
 		try {
 		 
 		inpStream = this.getClass().getClassLoader().getResourceAsStream("config.properties");
 		 
-		props.load(inpStream);
+		load(inpStream);
 		
 		LOGGER.log(Level.INFO, "PropertiesUrlReceptionist: URL has been received");
 		 
@@ -60,7 +61,7 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 		inpStream.close();
 		 
 		}
-		return props.getProperty("url");
+		return getProperty("url");
 	}
 
 }
