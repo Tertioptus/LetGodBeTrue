@@ -30,7 +30,12 @@ package com.tertioptus;
  */
 public class Default {
 
-	public static UrlReceptionist UrlReceptionist() {
-		return new QualifyingUrlReceptionist(new PropertiesUrlReceptionist());
+	public static PropertiesMapEngineer PropertiesMapEngineer() {
+		return new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer());
 	}
+	
+	public static UrlReceptionist UrlReceptionist(MapEngineer<String,String> mapEngineer) {
+		return new QualifyingUrlReceptionist(new PropertiesUrlReceptionist(mapEngineer));
+	}
+	
 }

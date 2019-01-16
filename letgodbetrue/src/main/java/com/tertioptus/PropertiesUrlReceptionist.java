@@ -17,9 +17,6 @@
  */
 package com.tertioptus;
 
-import java.io.InputStream;
-import java.util.Properties;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -33,35 +30,25 @@ import java.util.logging.Logger;
  * @author Benjamin F. Paige III
  * @since Jan 14, 2019
  */
-public class PropertiesUrlReceptionist extends Properties implements UrlReceptionist {
-
-	private static final long serialVersionUID = 1L;
+public class PropertiesUrlReceptionist implements UrlReceptionist {
 	
 	private final static Logger LOGGER =  
                 Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
 	
+	private MapEngineer<String,String> mapEngineer;
+	
+	public PropertiesUrlReceptionist(MapEngineer<String, String> mapEngineer) {
+		this.mapEngineer = mapEngineer;
+	}
 
 	/**
 	 * @see com.tertioptus.UrlReceptionist#url()
 	 */
 	@Override
 	public String url() throws Exception {
-		InputStream inpStream = null;
-		 
-		try {
-		 
-		inpStream = this.getClass().getClassLoader().getResourceAsStream("config.properties");
-		 
-		load(inpStream);
-		
-		LOGGER.log(Level.INFO, "PropertiesUrlReceptionist: URL has been received");
-		 
-		} finally {
-		 
-		inpStream.close();
-		 
-		}
-		return getProperty("url");
+
+			//LOGGER.log(Level.INFO "PropertiesUrlReceptionist: URL has been received");
+		return this.mapEngineer.value("url");
 	}
 
 }

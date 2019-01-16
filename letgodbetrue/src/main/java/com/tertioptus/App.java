@@ -3,13 +3,17 @@ package com.tertioptus;
 import static com.tertioptus.Default.*;
 
 /**
- * Hello world!
+ * LetGodBeTrue.com podcast updater entry-point
  *
  */
 public class App 
 {
     public static void main( String[] args ) throws Exception
     {
-        System.out.println(UrlReceptionist().url() );
+        System.out.println(
+        		UrlReceptionist(
+        				PropertiesMapEngineer()
+        		).url()
+        );
     }
 }
