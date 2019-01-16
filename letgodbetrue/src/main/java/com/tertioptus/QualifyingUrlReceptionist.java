@@ -4,11 +4,17 @@ import java.util.logging.Logger;
 
 import org.apache.commons.validator.routines.UrlValidator;
 
-
 /**
  * 
- * @author P1836
+ * Considers the quality of the URL.
  *
+ * @assertion
+ * <pre> 
+ * 	TODO implement class assertion
+ * </pre>
+ *
+ * @author Benjamin F. Paige III
+ * @since Jan 15, 2019
  */
 public class QualifyingUrlReceptionist extends UrlValidator implements UrlReceptionist {
 	
@@ -19,14 +25,30 @@ public class QualifyingUrlReceptionist extends UrlValidator implements UrlRecept
 	private final static Logger LOGGER =  
                 Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
 	
+	/**
+	 * Default constructor.
+	 * 
+	 * <pre>
+	 * 	badUrlReceptionist = mock(UrlReceptionist);
+	 * </pre>
+	 * 
+	 * @param urlReceptionist
+	 */
 	public QualifyingUrlReceptionist(UrlReceptionist urlReceptionist) {
 		this.urlReceptionist = urlReceptionist;
 	}
 
 	/**
+	 * @assertion A bad URL receptionist causes an exception to be raised.
+	 * <pre>
+	 * 	assertException(badUrlReceptionist.url())
+	 * </pre>
 	 * 
+	 * @assertion A good URL receptionist presents a non-empty String.
+	 * <pre>
+	 * 	assertTrue(goodUrlReceptionist.url().isNotEmpty())
+	 * </pre>
 	 */
-	@Override
 	public String url() throws Exception {
 		
 		String url = urlReceptionist.url();

@@ -38,4 +38,7 @@ public class Default {
 		return new QualifyingUrlReceptionist(new PropertiesUrlReceptionist(mapEngineer));
 	}
 	
+	public static Squirrel Squirrel(UrlReceptionist urlReceptionist){
+		return new HtmlUnitSquirrel(urlReceptionist);
+	}
 }
