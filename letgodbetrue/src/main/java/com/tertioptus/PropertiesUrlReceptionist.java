@@ -22,11 +22,6 @@ import java.util.logging.Logger;
 /**
  * Handles incoming URL from local properties.
  *
- * @assertion
- * <pre> 
- * 	TODO implement class assertion
- * </pre>
- *
  * @author Benjamin F. Paige III
  * @since Jan 14, 2019
  */
@@ -47,7 +42,7 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 	@Override
 	public String url() throws Exception {
 
-			//LOGGER.log(Level.INFO "PropertiesUrlReceptionist: URL has been received");
+		LOGGER.info(this.getClass().getName() + ": acquiring url value from properites map.");
 		return this.mapEngineer.value("url");
 	}
 

@@ -2,8 +2,6 @@ package com.tertioptus;
 
 import java.util.logging.Logger;
 
-import org.apache.commons.validator.routines.UrlValidator;
-
 /**
  * 
  * Considers the quality of the URL.
@@ -16,11 +14,11 @@ import org.apache.commons.validator.routines.UrlValidator;
  * @author Benjamin F. Paige III
  * @since Jan 15, 2019
  */
-public class QualifyingUrlReceptionist extends UrlValidator implements UrlReceptionist {
+public class QualifyingUrlReceptionist implements UrlReceptionist {
 	
-	private static final long serialVersionUID = 1L;
-
 	private final UrlReceptionist urlReceptionist;
+	
+	private final UrlValidator urlValidator;
 	
 	private final static Logger LOGGER =  
                 Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
@@ -34,7 +32,8 @@ public class QualifyingUrlReceptionist extends UrlValidator implements UrlRecept
 	 * 
 	 * @param urlReceptionist
 	 */
-	public QualifyingUrlReceptionist(UrlReceptionist urlReceptionist) {
+	public QualifyingUrlReceptionist(UrlValidator urlValidator, UrlReceptionist urlReceptionist) {
+		this.urlValidator = urlValidator;
 		this.urlReceptionist = urlReceptionist;
 	}
 
@@ -53,7 +52,7 @@ public class QualifyingUrlReceptionist extends UrlValidator implements UrlRecept
 		
 		String url = urlReceptionist.url();
 		
-		if(!isValid(url))
+		if(!urlValidator.isValid(url))
 			throw new Exception(this.getClass().getName() + ": URL is invalid");
 		
 		LOGGER.info(this.getClass().getName() + ": URL is valid");

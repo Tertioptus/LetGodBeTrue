@@ -2,6 +2,12 @@ package com.tertioptus;
 
 import java.util.Properties;
 
+/**
+ * Properties file mapping technician of files via a resource stream.
+ *
+ * @author Benjamin F. Paige III
+ * @since Jan 19, 2019
+ */
 public final class PropertiesMapEngineer implements MapEngineer<String, String>{
 	
 	private String propertiesFileName;

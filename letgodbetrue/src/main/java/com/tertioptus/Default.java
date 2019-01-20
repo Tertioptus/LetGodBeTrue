@@ -18,12 +18,7 @@
 package com.tertioptus;
 
 /**
- * TODO describe responsibility
- *
- * @assertion
- * <pre> 
- * 	TODO implement class assertion
- * </pre>
+ * Default dependency assignments.
  *
  * @author Benjamin F. Paige III
  * @since Jan 14, 2019
@@ -35,10 +30,10 @@ public class Default {
 	}
 	
 	public static UrlReceptionist UrlReceptionist(MapEngineer<String,String> mapEngineer) {
-		return new QualifyingUrlReceptionist(new PropertiesUrlReceptionist(mapEngineer));
+		return new QualifyingUrlReceptionist(new ApacheUrlValidatorEngineer(), new PropertiesUrlReceptionist(mapEngineer));
 	}
 	
 	public static Squirrel Squirrel(UrlReceptionist urlReceptionist){
-		return new HtmlUnitSquirrel(urlReceptionist);
+		return new WebContentSquirrel(urlReceptionist, new HtmlUnitEngineer());
 	}
 }

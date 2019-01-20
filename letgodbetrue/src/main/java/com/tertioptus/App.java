@@ -16,6 +16,7 @@ public class App
         			UrlReceptionist(
         				PropertiesMapEngineer()
         			)	
-        		).html());
+        		).html()
+        );
     }
 }
