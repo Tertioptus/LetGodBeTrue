@@ -2,8 +2,9 @@ package com.tertioptus.web;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.tertioptus.Sol;
 
-public class HtmlUnitEngineer implements WebContentEngineer<String[]> {
+public class HtmlUnitEngineer extends Sol implements WebContentEngineer<String[]> {
 
 	private WebClient webClient;
 

@@ -17,9 +17,8 @@
  */
 package com.tertioptus.web.url;
 
-import java.util.logging.Logger;
-
 import com.tertioptus.MapEngineer;
+import com.tertioptus.Sol;
 
 /**
  * Handles incoming URL from local properties.
@@ -27,10 +26,7 @@ import com.tertioptus.MapEngineer;
  * @author Benjamin F. Paige III
  * @since Jan 14, 2019
  */
-public class PropertiesUrlReceptionist implements UrlReceptionist {
-	
-	private final static Logger LOGGER =  
-                Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
+public class PropertiesUrlReceptionist extends Sol implements UrlReceptionist {
 	
 	private MapEngineer<String,String> mapEngineer;
 	
@@ -44,7 +40,7 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 	@Override
 	public String url() throws Exception {
 
-		LOGGER.info(this.getClass().getName() + ": acquiring url value from properites map.");
+		LOGGER.info("acquiring url value from properites map.");
 		return this.mapEngineer.value("url");
 	}
 

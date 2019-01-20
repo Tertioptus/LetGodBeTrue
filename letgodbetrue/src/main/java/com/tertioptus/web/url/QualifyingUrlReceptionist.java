@@ -1,6 +1,6 @@
 package com.tertioptus.web.url;
 
-import java.util.logging.Logger;
+import com.tertioptus.Sol;
 
 /**
  * 
@@ -14,14 +14,11 @@ import java.util.logging.Logger;
  * @author Benjamin F. Paige III
  * @since Jan 15, 2019
  */
-public class QualifyingUrlReceptionist implements UrlReceptionist {
+public class QualifyingUrlReceptionist extends Sol implements UrlReceptionist {
 	
 	private final UrlReceptionist urlReceptionist;
 	
 	private final UrlValidator urlValidator;
-	
-	private final static Logger LOGGER =  
-                Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
 	
 	/**
 	 * Default constructor.
@@ -55,7 +52,7 @@ public class QualifyingUrlReceptionist implements UrlReceptionist {
 		if(!urlValidator.isValid(url))
 			throw new Exception(this.getClass().getName() + ": URL is invalid");
 		
-		LOGGER.info(this.getClass().getName() + ": URL is valid");
+		LOGGER.info("URL is valid");
 		
 		return url;
 	}
