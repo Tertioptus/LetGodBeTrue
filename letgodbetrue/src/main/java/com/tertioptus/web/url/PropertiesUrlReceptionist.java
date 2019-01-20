@@ -15,9 +15,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tertioptus;
+package com.tertioptus.web.url;
 
 import java.util.logging.Logger;
+
+import com.tertioptus.MapEngineer;
 
 /**
  * Handles incoming URL from local properties.
@@ -37,7 +39,7 @@ public class PropertiesUrlReceptionist implements UrlReceptionist {
 	}
 
 	/**
-	 * @see com.tertioptus.UrlReceptionist#url()
+	 * @see com.tertioptus.web.url.UrlReceptionist#url()
 	 */
 	@Override
 	public String url() throws Exception {

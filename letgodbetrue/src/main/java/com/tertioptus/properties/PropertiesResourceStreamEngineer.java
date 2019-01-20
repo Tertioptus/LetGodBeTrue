@@ -1,7 +1,9 @@
-package com.tertioptus;
+package com.tertioptus.properties;
 
 import java.io.InputStream;
 import java.util.Properties;
+
+import com.tertioptus.ResourceStreamEngineer;
 
 /**
  * Java resource technician for loading properties utilities.

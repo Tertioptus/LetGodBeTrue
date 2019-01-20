@@ -1,4 +1,4 @@
-package com.tertioptus;
+package com.tertioptus.web.url;
 
 /**
  * Technician of the Apchache UrlValidator

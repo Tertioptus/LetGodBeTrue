@@ -1,4 +1,4 @@
-package com.tertioptus;
+package com.tertioptus.web;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;

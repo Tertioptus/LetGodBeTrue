@@ -1,4 +1,4 @@
-package com.tertioptus;
+package com.tertioptus.web.url;
 
 /**
  * Quality control technician for URL resolutions.

@@ -1,4 +1,4 @@
-package com.tertioptus;
+package com.tertioptus.web;
 
 public interface WebContentEngineer<T> {
 

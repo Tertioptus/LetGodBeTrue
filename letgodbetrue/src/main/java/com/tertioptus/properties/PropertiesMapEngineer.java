@@ -1,6 +1,9 @@
-package com.tertioptus;
+package com.tertioptus.properties;
 
 import java.util.Properties;
+
+import com.tertioptus.MapEngineer;
+import com.tertioptus.ResourceStreamEngineer;
 
 /**
  * Properties file mapping technician of files via a resource stream.

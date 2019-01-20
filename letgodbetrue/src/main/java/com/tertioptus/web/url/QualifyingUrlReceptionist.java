@@ -1,4 +1,4 @@
-package com.tertioptus;
+package com.tertioptus.web.url;
 
 import java.util.logging.Logger;
 

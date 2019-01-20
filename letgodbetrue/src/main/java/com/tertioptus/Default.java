@@ -17,6 +17,16 @@
  */
 package com.tertioptus;
 
+import com.tertioptus.properties.PropertiesMapEngineer;
+import com.tertioptus.properties.PropertiesResourceStreamEngineer;
+import com.tertioptus.web.HtmlUnitEngineer;
+import com.tertioptus.web.Squirrel;
+import com.tertioptus.web.WebContentSquirrel;
+import com.tertioptus.web.url.ApacheUrlValidatorEngineer;
+import com.tertioptus.web.url.PropertiesUrlReceptionist;
+import com.tertioptus.web.url.QualifyingUrlReceptionist;
+import com.tertioptus.web.url.UrlReceptionist;
+
 /**
  * Default dependency assignments.
  *

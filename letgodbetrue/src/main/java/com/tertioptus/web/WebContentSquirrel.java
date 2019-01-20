@@ -1,4 +1,6 @@
-package com.tertioptus;
+package com.tertioptus.web;
+
+import com.tertioptus.web.url.UrlReceptionist;
 
 /**
  * 
