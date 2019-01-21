@@ -35,8 +35,8 @@ import com.tertioptus.web.url.UrlReceptionist;
  */
 public class Default {
 
-	public static PropertiesMapEngineer PropertiesMapEngineer() {
-		return new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer());
+	public static PropertiesMapEngineer PropertiesMapEngineer(String propertiesFile) {
+		return new PropertiesMapEngineer(propertiesFile, new PropertiesResourceStreamEngineer());
 	}
 	
 	public static UrlReceptionist UrlReceptionist(MapEngineer<String,String> mapEngineer) {

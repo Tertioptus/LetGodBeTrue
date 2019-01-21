@@ -20,7 +20,7 @@ public class App extends Sol
         System.out.println(
         		Squirrel(
         			UrlReceptionist(
-        				PropertiesMapEngineer()
+        				PropertiesMapEngineer("config.properties")
         			)	
         		).html()
         );
