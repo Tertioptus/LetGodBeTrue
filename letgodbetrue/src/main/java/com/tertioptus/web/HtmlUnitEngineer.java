@@ -1,10 +1,14 @@
 package com.tertioptus.web;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
 import com.tertioptus.Sol;
 
-public class HtmlUnitEngineer extends Sol implements WebContentEngineer<String[]> {
+public class HtmlUnitEngineer extends Sol implements WebContentEngineer<HtmlTableRow> {
 
 	private WebClient webClient;
 
@@ -12,13 +16,13 @@ public class HtmlUnitEngineer extends Sol implements WebContentEngineer<String[]
 		this.webClient = new WebClient();
 	}
 
-	@Override
-	public void loadById(String url, String id, String[] container) throws Exception {
+	public Stream<HtmlTableRow> stream(String url, String id) throws Exception {
 		webClient.getOptions().setCssEnabled(false);
 		webClient.getOptions().setJavaScriptEnabled(false);
 		try {
 			HtmlPage page = webClient.getPage(url);
-			container[0] = page.getElementById(id).asXml();
+			List<?> trs =  page.getElementsByTagName("tr");
+			return trs.stream().map(r -> (HtmlTableRow) r);
 		} catch (Exception e) {
 			throw e;
 		} finally {

@@ -1,6 +1,8 @@
 package com.tertioptus.web;
 
+import java.util.stream.Stream;
+
 public interface WebContentEngineer<T> {
 
-	public void loadById(String url, String id, T container) throws Exception;
+	public Stream<T> stream(String url, String id) throws Exception;
 }

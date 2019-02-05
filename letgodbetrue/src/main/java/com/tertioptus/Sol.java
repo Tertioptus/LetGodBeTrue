@@ -14,4 +14,5 @@ public abstract class Sol {
 	protected final static Logger LOGGER =  
                 Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 	
 
+	//protected final static MESSENGER = ResourceBundle
 }

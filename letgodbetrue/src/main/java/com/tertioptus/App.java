@@ -22,7 +22,7 @@ public class App extends Sol
         			UrlReceptionist(
         				PropertiesMapEngineer("config.properties")
         			)	
-        		).html()
+        		).sermons()
         );
     }
 }
