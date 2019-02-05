@@ -26,8 +26,10 @@ public class WebContentSquirrel implements Squirrel {
 
 	@Override
 	public Stream<String[]> sermons() throws Exception { 
-		return webContentEngineer.stream(urlReceptionist.url(), "content")
-		.map(r -> map(r));
+		return webContentEngineer
+		.stream(urlReceptionist.url(), "content")
+		.map(r -> map(r))
+		.filter(r -> !"".equals(r[2]+r[4]+r[6]));
 	}
 	
 	private String[] map(HtmlTableRow row) {
