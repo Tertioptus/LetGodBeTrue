@@ -17,12 +17,10 @@ public class App extends Sol
         LogManager.getLogManager().reset();
         LOGGER.addHandler(new LogHandler());
 
-        System.out.println(
         		Squirrel(
         			UrlReceptionist(
         				PropertiesMapEngineer("config.properties")
         			)	
-        		).sermons()
-        );
+        		).sermons().forEach(s -> System.out.println(s[0] + " " + s[6] + " " + s[7]));
     }
 }

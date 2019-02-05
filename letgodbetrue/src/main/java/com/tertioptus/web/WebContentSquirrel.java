@@ -44,16 +44,25 @@ public class WebContentSquirrel implements Squirrel {
 		sermonRecord[7] ="";
 		sermonRecord[8] = row.getCell(3).getFirstChild().asText();
 			
-		mapAnchors(2,row.getCell(2).getFirstChild().getFirstChild(),sermonRecord);
+		mapAnchors(row.getCell(2).getFirstChild().getFirstChild(),sermonRecord);
 		return sermonRecord;
 	}
 	
-	void mapAnchors(int count, DomNode firstAnchor, String[] sermonRecord) {
+	void mapAnchors(DomNode firstAnchor, String[] sermonRecord) {
 		DomNode cursorNode = firstAnchor;
+		int index=0;
 		while(cursorNode != null && cursorNode.hasAttributes())
 		{
-			sermonRecord[count++] = cursorNode.getTextContent();
-			sermonRecord[count++] = cursorNode.getAttributes().getNamedItem("href").getTextContent();
+			switch(cursorNode.getTextContent().trim()) {
+				case "Intro": index = 2;
+				break;
+				case "Psalm": index = 4;
+				break;
+				case "Sermon": index = 6;
+				break;
+			}
+			sermonRecord[index] = cursorNode.getTextContent();
+			sermonRecord[index+1] = cursorNode.getAttributes().getNamedItem("href").getTextContent();
 			
 			cursorNode = cursorNode.getNextSibling() == null? null : cursorNode.getNextSibling().getNextSibling();
 		}	
