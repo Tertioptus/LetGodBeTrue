@@ -15,7 +15,6 @@ public final class PropertiesResourceStreamEngineer implements ResourceStreamEng
 
 	private InputStream inpStream;
 	
-
 	/**
 	 * Loads properties. 
 	 */

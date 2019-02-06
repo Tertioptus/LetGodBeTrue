@@ -21,11 +21,6 @@ package com.tertioptus.web.url;
  * 
  * Handles incoming URL, for future usage.
  *
- * @assertion
- * <pre> 
- * 	TODO implement class assertion
- * </pre>
- *
  * @author Benjamin F. Paige III
  * @since Jan 14, 2019
  */

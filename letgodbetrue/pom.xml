@@ -99,7 +99,15 @@
 			<plugin>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+				<version>2.10.1</version>
+			</plugin>
 		</plugins>
 	</reporting>
-	
+
 </project>

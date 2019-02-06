@@ -8,6 +8,13 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
 import com.tertioptus.Sol;
 
+/**
+ * Manages an HTML Unit {@link WebClient}.
+ *
+ * @author Benjamin F. Paige III
+ * @since Feb 6, 2019
+ * @see com.gargoylesoftware.htmlunit
+ */
 public class HtmlUnitEngineer extends Sol implements WebContentEngineer<HtmlTableRow> {
 
 	private WebClient webClient;
