@@ -35,14 +35,14 @@ public class QualifyingUrlReceptionist extends Sol implements UrlReceptionist {
 	}
 
 	/**
-	 * @assertion A bad URL receptionist causes an exception to be raised.
-	 * <pre>
+	 * <pre assertion='A bad URL receptionist causes an exception to be raised.'>
 	 * 	assertException(badUrlReceptionist.url())
 	 * </pre>
 	 * 
-	 * @assertion A good URL receptionist presents a non-empty String.
-	 * <pre>
+	 * <pre assertion='A good URL receptionist presents a non-empty String.'>
+	 * {@code
 	 * 	assertTrue(goodUrlReceptionist.url().isNotEmpty())
+	 * }
 	 * </pre>
 	 */
 	public String url() throws Exception {

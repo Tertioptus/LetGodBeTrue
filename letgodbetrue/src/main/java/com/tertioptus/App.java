@@ -21,6 +21,6 @@ public class App extends Sol
         			UrlReceptionist(
         				PropertiesMapEngineer("config.properties")
         			)	
-        		).sermons().forEach(s -> System.out.println(s[0] + " " + s[2]+s[4]+s[6] + " " + s[7]));
+        		).sermons().forEach(s -> System.out.println(s[0] + " " + s[2]+s[4]+s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
     }
 }

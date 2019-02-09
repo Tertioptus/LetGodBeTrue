@@ -20,6 +20,7 @@ package com.tertioptus;
 import com.tertioptus.properties.PropertiesMapEngineer;
 import com.tertioptus.properties.PropertiesResourceStreamEngineer;
 import com.tertioptus.web.HtmlUnitEngineer;
+import com.tertioptus.web.SecretarySquirrel;
 import com.tertioptus.web.Squirrel;
 import com.tertioptus.web.WebContentSquirrel;
 import com.tertioptus.web.url.ApacheUrlValidatorEngineer;
@@ -44,6 +45,6 @@ public class Default {
 	}
 	
 	public static Squirrel Squirrel(UrlReceptionist urlReceptionist){
-		return new WebContentSquirrel(urlReceptionist, new HtmlUnitEngineer());
+		return new SecretarySquirrel(new WebContentSquirrel(urlReceptionist, new HtmlUnitEngineer()));
 	}
 }
