@@ -34,6 +34,11 @@
 			<artifactId>htmlunit</artifactId>
 			<version>2.19</version>
 		</dependency>
+		<dependency>
+			<groupId>com.rometools</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.12.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -18,7 +18,6 @@
 package com.tertioptus.web.url;
 
 /**
- * 
  * Handles incoming URL, for future usage.
  *
  * @author Benjamin F. Paige III
@@ -27,17 +26,7 @@ package com.tertioptus.web.url;
 public interface UrlReceptionist {
 	
 	/**
-	 * 
 	 * Provides requested URL.
-	 *
-	 * @assertion
-	 * <pre> 
-	 * 	TODO implement method example 
-	 * </pre>
-	 *
-	 * @return
-	 * @throws Exception
 	 */
 	String url() throws Exception;
-
 }

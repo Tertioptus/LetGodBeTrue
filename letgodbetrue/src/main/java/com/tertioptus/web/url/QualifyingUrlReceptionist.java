@@ -3,13 +3,7 @@ package com.tertioptus.web.url;
 import com.tertioptus.Sol;
 
 /**
- * 
  * Considers the quality of the URL.
- *
- * @assertion
- * <pre> 
- * 	TODO implement class assertion
- * </pre>
  *
  * @author Benjamin F. Paige III
  * @since Jan 15, 2019
