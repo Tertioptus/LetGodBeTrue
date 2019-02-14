@@ -11,9 +11,11 @@ import com.tertioptus.Engineer;
 
 public final class SermonRaven implements Raven {
 	
+	//TODO PU-311 implement
+	
 	public SermonRaven(ChannelInformationReceptionist channelInformationReceptionist, Engineer engineer){
 		
-		
+	//#TODO PU-311 implement
 	}
 
 	/**
@@ -25,6 +27,7 @@ public final class SermonRaven implements Raven {
 	 */
 	public void dispatch(String filename) {
         try {
+        	//TODO PU-311 implement
         	/*
             String feedType = "atom_1.0";
 

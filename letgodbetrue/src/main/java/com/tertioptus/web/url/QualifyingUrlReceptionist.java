@@ -8,7 +8,7 @@ import com.tertioptus.Sol;
  *
  * @assertion
  * <pre> 
- * 	TODO implement class assertion
+ * 	TODO PU-311 implement class assertion
  * </pre>
  *
  * @author Benjamin F. Paige III

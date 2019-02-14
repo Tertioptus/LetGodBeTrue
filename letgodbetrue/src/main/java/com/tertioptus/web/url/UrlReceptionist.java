@@ -32,7 +32,7 @@ public interface UrlReceptionist {
 	 *
 	 * @assertion
 	 * <pre> 
-	 * 	TODO implement method example 
+	 * 	TODO PU-311 implement method example 
 	 * </pre>
 	 *
 	 * @return
