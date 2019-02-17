@@ -17,13 +17,13 @@ public class LogHandler extends Handler {
 
 	@Override
 	public void flush() {
-		// TODO Auto-generated method stub
+		// TODO release 1
 
 	}
 
 	@Override
 	public void close() throws SecurityException {
-		// TODO Auto-generated method stub
+		// TODO release 1
 
 	}
 

@@ -21,19 +21,18 @@ public class App extends Sol
 {
     public static void main( String[] args ) throws Exception
     {
-        LogManager.getLogManager().reset();
-        LOGGER.addHandler(new LogHandler());
-
-        		Squirrel(
-        			UrlReceptionist(
-        				theConfigPropertiesMapEngineer()
-        			)	
-        		).sermons().forEach(s -> System.out.println(s[0] + " " + s[2]+s[4]+s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
+    	init();
+    	
+        Squirrel(
+        	UrlReceptionist(
+        		theConfigPropertiesMapEngineer()
+        	)	
+        ).sermons().forEach(s -> System.out.println(s[0] + " " + s[2]+s[4]+s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
         		
         (new SermonRaven(
         			new PropertiesChannelInformationReceptionist(theConfigPropertiesMapEngineer()),
         			new AChannelEngineer()
-        		)).dispatch(theConfigPropertiesMapEngineer().value("filename"));
+       	)).dispatch(theConfigPropertiesMapEngineer().value("filename"));
         
         URL url;
         URLConnection conn;
@@ -52,7 +51,11 @@ public class App extends Sol
         catch(Exception e) {
           e.printStackTrace();
           }
-        
+    }
+    
+    private static void init() {
+        LogManager.getLogManager().reset();
+        LOGGER.addHandler(new LogHandler());
     }
 
 	public static PropertiesMapEngineer theConfigPropertiesMapEngineer() {
