@@ -9,17 +9,23 @@ import com.rometools.rome.feed.rss.Image;
  * @author Benjamin F. Paige III
  * @since Feb 15, 2019
  */
-public final class AChannelEngineer implements ChannelEngineer<String[]> {
+public final class AChannelEngineer implements ChannelEngineer {
 	
 	private final Channel channel = new Channel("rss_2.0");
+	private final ItemListEngineer itemListEngineer;
 	
+	public AChannelEngineer(ItemListEngineer itemListEngineer) {
+		this.itemListEngineer = itemListEngineer;
+	}
+
 	@Override
-	public Object component(String[] document) {
+	public Channel component(String[] document) {
 		channel.setLanguage(document[0]);
         channel.setTitle(document[1]);
         channel.setDescription(document[2]);
         channel.setImage(getImage(document[3]));
         channel.setLink(document[4]);
+        channel.setItems(itemListEngineer.items());
 		return channel;
 	}
 	

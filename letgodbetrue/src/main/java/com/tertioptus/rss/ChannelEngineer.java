@@ -1,6 +1,8 @@
 package com.tertioptus.rss;
 
-public interface ChannelEngineer<T> {
+import com.rometools.rome.feed.rss.Channel;
 
-	Object component(T payload);
+public interface ChannelEngineer {
+
+	Channel component(String[] document);
 }

@@ -10,6 +10,10 @@ import java.util.logging.LogManager;
 
 import com.tertioptus.properties.PropertiesMapEngineer;
 import com.tertioptus.rss.AChannelEngineer;
+import com.tertioptus.rss.AWireFeedOutputEngineer;
+import com.tertioptus.rss.AnEnclosureEngineer;
+import com.tertioptus.rss.AnItemEngineer;
+import com.tertioptus.rss.AnItemListEngineer;
 import com.tertioptus.rss.PropertiesChannelInformationReceptionist;
 import com.tertioptus.rss.SermonRaven;
 
@@ -22,16 +26,23 @@ public class App extends Sol
     public static void main( String[] args ) throws Exception
     {
     	init();
-    	
-        Squirrel(
-        	UrlReceptionist(
-        		theConfigPropertiesMapEngineer()
-        	)	
-        ).sermons().forEach(s -> System.out.println(s[0] + " " + s[2]+s[4]+s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
         		
         (new SermonRaven(
-        			new PropertiesChannelInformationReceptionist(theConfigPropertiesMapEngineer()),
-        			new AChannelEngineer()
+                Squirrel(
+                   	UrlReceptionist(
+                   		theConfigPropertiesMapEngineer()
+                   	)	
+                ),
+        		new PropertiesChannelInformationReceptionist(theConfigPropertiesMapEngineer()),
+        		new AWireFeedOutputEngineer(
+        				new AChannelEngineer(
+        						new AnItemListEngineer(
+        								new AnItemEngineer(
+        										new AnEnclosureEngineer()
+        								)
+        						)
+        				)
+        		)
        	)).dispatch(theConfigPropertiesMapEngineer().value("filename"));
         
         URL url;
