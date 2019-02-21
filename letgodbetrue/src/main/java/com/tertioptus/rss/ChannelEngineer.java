@@ -1,6 +1,10 @@
 package com.tertioptus.rss;
 
-public interface ChannelEngineer<T> {
+import java.util.stream.Stream;
 
-	Object component(T payload);
+import com.rometools.rome.feed.rss.Channel;
+
+public interface ChannelEngineer {
+
+	Channel component(String[] document, Stream<String[]> items);
 }
