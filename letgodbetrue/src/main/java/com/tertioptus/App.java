@@ -4,8 +4,6 @@ import static com.tertioptus.Default.PropertiesMapEngineer;
 import static com.tertioptus.Default.Squirrel;
 import static com.tertioptus.Default.UrlReceptionist;
 
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.logging.LogManager;
 
 import com.tertioptus.properties.PropertiesMapEngineer;
@@ -44,24 +42,6 @@ public class App extends Sol
         				)
         		)
        	)).dispatch(theConfigPropertiesMapEngineer().value("filename"));
-        
-        URL url;
-        URLConnection conn;
-        int size;
-
-        try {
-          url = new URL("http://letgodbetrue.com/media/audio/sermons/2006-04-30/2006-04-30-am-sermon.mp3");
-          conn = url.openConnection();
-          size = conn.getContentLength();
-          if(size < 0)
-             System.out.println("Could not determine file size.");
-          else
-            System.out.println("Size: " + size);
-          conn.getInputStream().close();
-          } 
-        catch(Exception e) {
-          e.printStackTrace();
-          }
     }
     
     private static void init() {

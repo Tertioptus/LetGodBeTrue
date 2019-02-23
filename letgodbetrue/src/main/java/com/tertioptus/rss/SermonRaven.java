@@ -34,19 +34,6 @@ public final class SermonRaven implements Raven {
 	 */
 	public void dispatch(String filename) {
 		try {
-
-			/*
-			 * Item item = new Item( ); item.setTitle("My First Podcast");
-			 * Description description = new Description( );
-			 * description.setType("text");
-			 * description.setValue("My first attempt at a podcast.");
-			 * item.setDescription(description); Enclosure enclosure = new
-			 * Enclosure( );
-			 * enclosure.setUrl("http://www.example.org/podcast/ep1.mp3");
-			 * enclosure.setType("audio/mpeg"); enclosure.setLength(4182295);
-			 * item.getEnclosures( ).add(enclosure); channel.getItems(
-			 * ).add(item);
-			 */
 			squirrel.sermons().forEach(
 					s -> System.out.println(s[0] + " " + s[2] + s[4] + s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
 			;

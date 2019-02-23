@@ -24,7 +24,7 @@ public final class AWireFeedOutputEngineer implements WireFeedOutputEngineer {
 	@Override
 	public void output(String filename, String[] channelDocument, Stream<String[]> items) throws Exception {
 		Writer writer = new FileWriter(filename);
-		outputter.output(channelEngineer.component(channelDocument), writer);
+		outputter.output(channelEngineer.component(channelDocument, items), writer);
 		writer.close();
 	}
 }

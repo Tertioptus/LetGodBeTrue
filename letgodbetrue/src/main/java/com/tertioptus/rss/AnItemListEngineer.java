@@ -1,6 +1,8 @@
 package com.tertioptus.rss;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import com.rometools.rome.feed.rss.Item;
 
@@ -19,10 +21,19 @@ public class AnItemListEngineer implements ItemListEngineer {
 	}
 
 	@Override
-	public List<Item> items() {
-
-		// TODO PU-32
-		return null;
+	public List<Item> items(Stream<String[]> items) {
+		List<Item> itemList = new ArrayList<>();
+		items.forEach(itemDocument -> add(itemDocument, itemList, 0));
+		return itemList;
 	}
 
+	private Object add(String[] itemDocument, List<Item> itemList, int selection) {
+
+		itemList.add(itemEngineer.item(itemDocument, selection));
+		
+		if(!itemDocument[selection * 2 + 3].isEmpty() || selection > 1)
+			add(itemDocument, itemList, selection++);
+		
+		return null;
+	}
 }

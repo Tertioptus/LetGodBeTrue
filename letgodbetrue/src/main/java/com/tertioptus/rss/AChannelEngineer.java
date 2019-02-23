@@ -1,5 +1,7 @@
 package com.tertioptus.rss;
 
+import java.util.stream.Stream;
+
 import com.rometools.rome.feed.rss.Channel;
 import com.rometools.rome.feed.rss.Image;
 
@@ -19,13 +21,13 @@ public final class AChannelEngineer implements ChannelEngineer {
 	}
 
 	@Override
-	public Channel component(String[] document) {
+	public Channel component(String[] document, Stream<String[]> itemStream) {
 		channel.setLanguage(document[0]);
         channel.setTitle(document[1]);
         channel.setDescription(document[2]);
         channel.setImage(getImage(document[3]));
         channel.setLink(document[4]);
-        channel.setItems(itemListEngineer.items());
+        channel.setItems(itemListEngineer.items(itemStream));
 		return channel;
 	}
 	
