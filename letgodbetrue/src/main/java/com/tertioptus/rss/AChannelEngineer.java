@@ -27,7 +27,7 @@ public final class AChannelEngineer implements ChannelEngineer {
         channel.setDescription(document[2]);
         channel.setImage(getImage(document[3]));
         channel.setLink(document[4]);
-        channel.setItems(itemListEngineer.items(itemStream));
+        channel.setItems(itemListEngineer.items(itemStream, document[4]));
 		return channel;
 	}
 	

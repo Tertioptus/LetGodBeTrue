@@ -10,6 +10,6 @@ import com.rometools.rome.feed.rss.Item;
  */
 public interface ItemEngineer {
 
-	Item item(String[] itemDocument, int selection);
+	Item item(String[] itemDocument, int selection) throws Exception;
 
 }

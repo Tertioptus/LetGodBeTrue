@@ -1,5 +1,6 @@
 package com.tertioptus.rss;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import com.rometools.rome.feed.rss.Item;
 public class AnItemEngineer implements ItemEngineer {
 	
 	private final EnclosureEngineer enclosureEngineer;
+	
+	private final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 
 	public AnItemEngineer(EnclosureEngineer enclosureEngineer) {
 
@@ -23,11 +26,12 @@ public class AnItemEngineer implements ItemEngineer {
 	}
 
 	@Override
-	public Item item(String[] itemDocument, int selection) {
+	public Item item(String[] itemDocument, int selection) throws Exception {
 		Item item = new Item();
 		item.setTitle(itemDocument[selection * 2 + 2] + ": " + itemDocument[1]);
 		item.setDescription(description(itemDocument));
 		item.setEnclosures(enclosures(itemDocument, selection));
+		item.setPubDate(format.parse(itemDocument[0].substring(0, 8)));
 		return item;
 	}
 

@@ -18,5 +18,5 @@ public interface ItemListEngineer {
 	 * @param itemStream 
 	 * @return
 	 */
-	List<Item> items(Stream<String[]> itemStream);
+	List<Item> items(Stream<String[]> itemStream, String host);
 }

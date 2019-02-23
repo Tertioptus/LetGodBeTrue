@@ -15,25 +15,34 @@ import com.rometools.rome.feed.rss.Item;
 public class AnItemListEngineer implements ItemListEngineer {
 
 	private final ItemEngineer itemEngineer;
-	
+
 	public AnItemListEngineer(ItemEngineer itemEngineer) {
 		this.itemEngineer = itemEngineer;
 	}
 
 	@Override
-	public List<Item> items(Stream<String[]> items) {
+	public List<Item> items(Stream<String[]> items, String host) {
 		List<Item> itemList = new ArrayList<>();
-		items.forEach(itemDocument -> add(itemDocument, itemList, 0));
+		items.forEach(itemDocument -> {
+			try {
+				add(itemDocument, itemList, host);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 		return itemList;
 	}
 
-	private Object add(String[] itemDocument, List<Item> itemList, int selection) {
+	private Object add(String[] itemDocument, List<Item> itemList, String host) throws Exception {
 
-		itemList.add(itemEngineer.item(itemDocument, selection));
-		
-		if(!itemDocument[selection * 2 + 3].isEmpty() || selection > 1)
-			add(itemDocument, itemList, selection++);
-		
+		for (int i = 0; i < 3; i++) {
+			if (!itemDocument[i * 2 + 3].isEmpty()) {
+				itemDocument[i * 2 + 3] = host + itemDocument[i * 2 + 3];
+				itemList.add(itemEngineer.item(itemDocument, i));
+			}
+		}
+
 		return null;
 	}
 }

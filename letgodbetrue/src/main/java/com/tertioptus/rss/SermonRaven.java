@@ -34,9 +34,9 @@ public final class SermonRaven implements Raven {
 	 */
 	public void dispatch(String filename) {
 		try {
-			squirrel.sermons().forEach(
+/*			squirrel.sermons().forEach(
 					s -> System.out.println(s[0] + " " + s[2] + s[4] + s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
-			;
+			;*/
 			wireFeedOutputEngineer.output(filename, 
 					channelInformationReceptionist.document(),
 					squirrel.sermons());
@@ -45,5 +45,4 @@ public final class SermonRaven implements Raven {
 			System.out.println("ERROR: " + ex.getMessage());
 		}
 	}
-
 }
