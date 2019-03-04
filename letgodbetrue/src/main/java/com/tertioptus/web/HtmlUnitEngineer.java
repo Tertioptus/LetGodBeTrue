@@ -15,7 +15,7 @@ import com.tertioptus.Sol;
  * @since Feb 6, 2019
  * @see com.gargoylesoftware.htmlunit
  */
-public class HtmlUnitEngineer extends Sol implements WebContentEngineer<HtmlTableRow> {
+final class HtmlUnitEngineer extends Sol implements WebContentEngineer<HtmlTableRow> {
 
 	private WebClient webClient;
 

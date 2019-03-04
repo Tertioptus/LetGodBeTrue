@@ -12,12 +12,12 @@ import com.rometools.rome.io.WireFeedOutput;
  * @author Benjamin F. Paige III
  * @since Feb 16, 2019
  */
-public final class AWireFeedOutputEngineer implements WireFeedOutputEngineer {
+final class AWireFeedOutputEngineer implements WireFeedOutputEngineer {
 	
 	private final WireFeedOutput outputter = new WireFeedOutput();
 	private final ChannelEngineer channelEngineer;
 	
-	public AWireFeedOutputEngineer(ChannelEngineer channelEngineer) {
+	AWireFeedOutputEngineer(ChannelEngineer channelEngineer) {
 		this.channelEngineer = channelEngineer;
 	}
 

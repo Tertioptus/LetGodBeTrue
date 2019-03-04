@@ -10,10 +10,23 @@ import com.tertioptus.web.Squirrel;
  */
 public final class SermonRaven implements Raven {
 
-	private ChannelInformationReceptionist channelInformationReceptionist;
-	private WireFeedOutputEngineer wireFeedOutputEngineer;
-	private Squirrel squirrel;
+	/**
+	 * 
+	 * @param squirrel
+	 * @param channelInformationReceptionist
+	 */
+	public SermonRaven(Squirrel squirrel, ChannelInformationReceptionist channelInformationReceptionist) {
+		this(squirrel, channelInformationReceptionist, new AWireFeedOutputEngineer(
+				new AChannelEngineer(new AnItemListEngineer(new AnItemEngineer(new AnEnclosureEngineer())))));
 
+	}
+
+	/**
+	 * 
+	 * @param squirrel
+	 * @param channelInformationReceptionist
+	 * @param wireFeedOutputEngineer
+	 */
 	public SermonRaven(Squirrel squirrel, ChannelInformationReceptionist channelInformationReceptionist,
 			WireFeedOutputEngineer wireFeedOutputEngineer) {
 
@@ -21,6 +34,10 @@ public final class SermonRaven implements Raven {
 		this.wireFeedOutputEngineer = wireFeedOutputEngineer;
 		this.squirrel = squirrel;
 	}
+
+	private ChannelInformationReceptionist channelInformationReceptionist;
+	private WireFeedOutputEngineer wireFeedOutputEngineer;
+	private Squirrel squirrel;
 
 	/**
 	 * <p assertion="">
@@ -34,12 +51,7 @@ public final class SermonRaven implements Raven {
 	 */
 	public void dispatch(String filename) {
 		try {
-/*			squirrel.sermons().forEach(
-					s -> System.out.println(s[0] + " " + s[2] + s[4] + s[6] + " " + s[3] + " " + s[5] + " " + s[7]));
-			;*/
-			wireFeedOutputEngineer.output(filename, 
-					channelInformationReceptionist.document(),
-					squirrel.sermons());
+			wireFeedOutputEngineer.output(filename, channelInformationReceptionist.document(), squirrel.sermons());
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("ERROR: " + ex.getMessage());

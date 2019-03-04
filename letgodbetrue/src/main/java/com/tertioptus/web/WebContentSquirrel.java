@@ -19,6 +19,11 @@ public class WebContentSquirrel implements Squirrel {
 	private UrlReceptionist urlReceptionist;
 	private WebContentEngineer<HtmlTableRow> webContentEngineer;
 	
+
+	public WebContentSquirrel(UrlReceptionist urlReceptionist) {
+		this(urlReceptionist, new HtmlUnitEngineer());
+	}
+	
 	public WebContentSquirrel(UrlReceptionist urlReceptionist, WebContentEngineer<HtmlTableRow> webContentEngineer) {
 		this.urlReceptionist = urlReceptionist;
 		this.webContentEngineer = webContentEngineer;

@@ -11,7 +11,7 @@ import com.rometools.rome.feed.rss.Image;
  * @author Benjamin F. Paige III
  * @since Feb 15, 2019
  */
-public final class AChannelEngineer implements ChannelEngineer {
+final class AChannelEngineer implements ChannelEngineer {
 	
 	private final Channel channel = new Channel("rss_2.0");
 	private final ItemListEngineer itemListEngineer;

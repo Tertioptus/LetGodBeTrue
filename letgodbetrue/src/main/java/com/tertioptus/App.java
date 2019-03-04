@@ -1,19 +1,16 @@
 package com.tertioptus;
 
-import static com.tertioptus.Default.PropertiesMapEngineer;
-import static com.tertioptus.Default.Squirrel;
-import static com.tertioptus.Default.UrlReceptionist;
-
 import java.util.logging.LogManager;
 
 import com.tertioptus.properties.PropertiesMapEngineer;
-import com.tertioptus.rss.AChannelEngineer;
-import com.tertioptus.rss.AWireFeedOutputEngineer;
-import com.tertioptus.rss.AnEnclosureEngineer;
-import com.tertioptus.rss.AnItemEngineer;
-import com.tertioptus.rss.AnItemListEngineer;
+import com.tertioptus.properties.PropertiesResourceStreamEngineer;
 import com.tertioptus.rss.PropertiesChannelInformationReceptionist;
 import com.tertioptus.rss.SermonRaven;
+import com.tertioptus.web.SecretarySquirrel;
+import com.tertioptus.web.WebContentSquirrel;
+import com.tertioptus.web.url.ApacheUrlValidatorEngineer;
+import com.tertioptus.web.url.PropertiesUrlReceptionist;
+import com.tertioptus.web.url.QualifyingUrlReceptionist;
 
 /**
  * LetGodBeTrue.com podcast updater entry-point
@@ -26,20 +23,18 @@ public class App extends Sol
     	init();
         		
         (new SermonRaven(
-                Squirrel(
-                   	UrlReceptionist(
-                   		theConfigPropertiesMapEngineer()
-                   	)	
+        		new SecretarySquirrel(
+        				new WebContentSquirrel(
+                   			new QualifyingUrlReceptionist(
+                   					new ApacheUrlValidatorEngineer(), 
+                   					new PropertiesUrlReceptionist(
+                   							theConfigPropertiesMapEngineer()
+                   					)
+                   			)
+                   		)
                 ),
-        		new PropertiesChannelInformationReceptionist(theConfigPropertiesMapEngineer()),
-        		new AWireFeedOutputEngineer(
-        				new AChannelEngineer(
-        						new AnItemListEngineer(
-        								new AnItemEngineer(
-        										new AnEnclosureEngineer()
-        								)
-        						)
-        				)
+        		new PropertiesChannelInformationReceptionist(
+        				theConfigPropertiesMapEngineer()
         		)
        	)).dispatch(theConfigPropertiesMapEngineer().value("filename"));
     }
@@ -50,6 +45,6 @@ public class App extends Sol
     }
 
 	public static PropertiesMapEngineer theConfigPropertiesMapEngineer() {
-		return PropertiesMapEngineer("config.properties");
+		return new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer());
 	}
 }

@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * @since Feb 6, 2019
  * @param <T> data type to be returned
  */
-public interface WebContentEngineer<T> {
+interface WebContentEngineer<T> {
 
 	/**
 	 * Fetch behavior that returns a stream of data 

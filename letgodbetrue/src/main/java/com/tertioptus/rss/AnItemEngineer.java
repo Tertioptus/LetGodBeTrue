@@ -14,7 +14,7 @@ import com.rometools.rome.feed.rss.Item;
  * @author Benjamin F. Paige III
  * @since Feb 21, 2019
  */
-public class AnItemEngineer implements ItemEngineer {
+final class AnItemEngineer implements ItemEngineer {
 	
 	private final EnclosureEngineer enclosureEngineer;
 	

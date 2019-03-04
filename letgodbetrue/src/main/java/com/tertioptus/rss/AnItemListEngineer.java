@@ -12,7 +12,7 @@ import com.rometools.rome.feed.rss.Item;
  * @author Benjamin F. Paige III
  * @since Feb 21, 2019
  */
-public class AnItemListEngineer implements ItemListEngineer {
+final class AnItemListEngineer implements ItemListEngineer {
 
 	private final ItemEngineer itemEngineer;
 

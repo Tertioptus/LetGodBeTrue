@@ -8,7 +8,7 @@ import java.util.stream.Stream;
  * @since Feb 16, 2019
  * @see com.rometools.rome.io.WireFeedOutput
  */
-public interface WireFeedOutputEngineer {
+interface WireFeedOutputEngineer {
 
 	/**
 	 * Will attempt to generate RSS file at the specified target.
