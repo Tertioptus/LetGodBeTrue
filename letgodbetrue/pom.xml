@@ -87,7 +87,7 @@
 					<configuration>
 						<archive>
 							<manifest>
-								<mainClass>com.tertioptus.App</mainClass>
+								<mainClass>com.tertioptus.Console</mainClass>
 							</manifest>
 						</archive>
 						<descriptorRefs>
