@@ -41,7 +41,9 @@ final class AChannelEngineer implements ChannelEngineer {
 		Category category = new Category("Religion & Spirituality");
 		category.setSubcategory(new Subcategory("Christianity"));
 		feedInfo.getCategories().add(category);
-		feedInfo.getCategories().add(new Category("Sermons"));
+		feedInfo.setAuthor("[author]");
+		feedInfo.setSubtitle("[subtitle");
+		feedInfo.setSummary("[summary]");
 		return channel;
 	}
 
