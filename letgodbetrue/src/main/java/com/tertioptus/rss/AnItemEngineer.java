@@ -15,15 +15,14 @@ import com.rometools.rome.feed.rss.Item;
  * @since Feb 21, 2019
  */
 final class AnItemEngineer implements ItemEngineer {
-	
-	private final EnclosureEngineer enclosureEngineer;
-	
-	private final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 
 	public AnItemEngineer(EnclosureEngineer enclosureEngineer) {
-
 		this.enclosureEngineer = enclosureEngineer;
 	}
+
+	private final EnclosureEngineer enclosureEngineer;
+
+	private final SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 
 	@Override
 	public Item item(String[] itemDocument, int selection) throws Exception {

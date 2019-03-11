@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title>Let God Be True!</title>
     <link>http://letgodbetrue.com</link>
     <description>let God be true, but every man a liar; as it is written... Romans 3:4</description>
     <language>en-us</language>
+    <itunes:owner>
+      <itunes:email>benpaigeiii@hotmail.com</itunes:email>
+      <itunes:name>Ben Paige</itunes:name>
+    </itunes:owner>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Christianity" />
+    </itunes:category>
+    <itunes:category text="Sermons" />
+    <itunes:keywords>Bible, KJV, King James Version, Plain preaching, The Church of Greenville, Church, Greenville, SC</itunes:keywords>
     <image>
       <title>logo</title>
       <url>https://github.com/Tertioptus/LetGodBeTrue/raw/master/Let_God_be_True_.png</url>

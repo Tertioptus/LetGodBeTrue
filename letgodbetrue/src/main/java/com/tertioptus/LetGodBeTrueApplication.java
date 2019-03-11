@@ -11,7 +11,10 @@ import com.tertioptus.web.url.ApacheUrlValidatorEngineer;
 import com.tertioptus.web.url.PropertiesUrlReceptionist;
 import com.tertioptus.web.url.QualifyingUrlReceptionist;
 
-public class LetGodBeTrueApplication {
+public class LetGodBeTrueApplication implements Application {
+	
+	private final static PropertiesMapEngineer thePropertiesMapEngineer  = 
+			new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer());
 	
 	public LetGodBeTrueApplication() {
 		this(new SermonRaven(
@@ -20,24 +23,25 @@ public class LetGodBeTrueApplication {
                    			new QualifyingUrlReceptionist(
                    					new ApacheUrlValidatorEngineer(), 
                    					new PropertiesUrlReceptionist(
-                   							new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer())
+                   						thePropertiesMapEngineer	
                    					)
                    			)
                    		)
                 ),
-        		new PropertiesChannelInformationReceptionist(
-        				new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer())
-        		)
-       	));
+        		new PropertiesChannelInformationReceptionist(thePropertiesMapEngineer)
+       	)
+		,thePropertiesMapEngineer);
 	}
 
-	public LetGodBeTrueApplication(Raven raven) {
+	public LetGodBeTrueApplication(Raven raven, MapEngineer<String,String> propertiesMapEngineer) {
 		this.raven = raven;
+		this.propertiesMapEngineer = propertiesMapEngineer;
 	}
 	
 	private final Raven raven;
+	private final MapEngineer<String, String> propertiesMapEngineer;
 
 	public void run(String[] args) throws Exception{
-		raven.dispatch(new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer()).value("filename"));
+		raven.dispatch(propertiesMapEngineer.value("filename"));
 	}
 }
