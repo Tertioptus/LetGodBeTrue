@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
+import com.rometools.modules.itunes.EntryInformation;
+import com.rometools.modules.itunes.EntryInformationImpl;
 import com.rometools.rome.feed.rss.Description;
 import com.rometools.rome.feed.rss.Enclosure;
 import com.rometools.rome.feed.rss.Item;
@@ -31,6 +33,10 @@ final class AnItemEngineer implements ItemEngineer {
 		item.setDescription(description(itemDocument));
 		item.setEnclosures(enclosures(itemDocument, selection));
 		item.setPubDate(format.parse(itemDocument[0].substring(0, 8)));
+		EntryInformation entryInfo = new EntryInformationImpl();
+		entryInfo.setKeywords(new String[] { "Sermon" });
+		entryInfo.setAuthor("benpaigeiii@hotmail.com");
+		item.getModules().add(entryInfo);
 		return item;
 	}
 
