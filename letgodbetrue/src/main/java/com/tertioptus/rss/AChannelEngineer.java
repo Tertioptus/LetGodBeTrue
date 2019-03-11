@@ -2,7 +2,6 @@ package com.tertioptus.rss;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.stream.Stream;
 
 import com.rometools.modules.itunes.FeedInformation;
@@ -44,13 +43,12 @@ final class AChannelEngineer implements ChannelEngineer {
 		Category category = new Category("Religion & Spirituality");
 		category.setSubcategory(new Subcategory("Christianity"));
 		feedInfo.getCategories().add(category);
-		feedInfo.setAuthor("[author]");
+		feedInfo.setAuthor("Jonathan Crosby");
 		feedInfo.setSubtitle("[subtitle");
 		feedInfo.setSummary("[summary]");
 		try {
 			feedInfo.setImage(new URL(document[3]));
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return channel;
@@ -59,8 +57,10 @@ final class AChannelEngineer implements ChannelEngineer {
 	private Image getImage(String imageValue) {
 		Image image = new Image();
 		image.setUrl(imageValue);
-		image.setTitle("logo");
-		image.setDescription("logo");
+		image.setTitle("Let God Be True");
+		image.setDescription("Let God be true, but every man a liar as it is written... Romans 3:4");
+		image.setHeight(600);
+		image.setWidth(600);
 		return image;
 	}
 }
