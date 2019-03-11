@@ -1,5 +1,8 @@
 package com.tertioptus.rss;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.stream.Stream;
 
 import com.rometools.modules.itunes.FeedInformation;
@@ -44,6 +47,12 @@ final class AChannelEngineer implements ChannelEngineer {
 		feedInfo.setAuthor("[author]");
 		feedInfo.setSubtitle("[subtitle");
 		feedInfo.setSummary("[summary]");
+		try {
+			feedInfo.setImage(new URL(document[3]));
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return channel;
 	}
 
@@ -54,5 +63,4 @@ final class AChannelEngineer implements ChannelEngineer {
 		image.setDescription("logo");
 		return image;
 	}
-
 }
