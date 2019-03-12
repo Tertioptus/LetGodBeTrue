@@ -1,5 +1,6 @@
 package com.tertioptus.rss;
 
+import com.tertioptus.Sol;
 import com.tertioptus.web.Squirrel;
 
 /**
@@ -8,7 +9,7 @@ import com.tertioptus.web.Squirrel;
  * @author Benjamin F. Paige III
  * @since Feb 16, 2019
  */
-public final class SermonRaven implements Raven {
+public final class SermonRaven extends Sol implements Raven {
 
 	/**
 	 * 
@@ -52,6 +53,8 @@ public final class SermonRaven implements Raven {
 	public void dispatch(String filename) {
 		try {
 			wireFeedOutputEngineer.output(filename, channelInformationReceptionist.document(), squirrel.sermons());
+			
+			LOGGER.info("File generation complete.");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("ERROR: " + ex.getMessage());

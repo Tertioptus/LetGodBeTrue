@@ -36,7 +36,7 @@ final class AnItemEngineer implements ItemEngineer {
 		EntryInformation entryInfo = new EntryInformationImpl();
 		entryInfo.setKeywords(new String[] { "Sermon" });
 		entryInfo.setAuthor("Jonathan Crosby");
-		entryInfo.setSummary("[summary]");
+		entryInfo.setSummary(itemDocument[8]);
 		entryInfo.setSubtitle("[subtitle]");
 		item.getModules().add(entryInfo);
 		return item;

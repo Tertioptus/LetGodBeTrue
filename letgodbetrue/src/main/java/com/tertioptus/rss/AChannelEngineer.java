@@ -44,8 +44,8 @@ final class AChannelEngineer implements ChannelEngineer {
 		category.setSubcategory(new Subcategory("Christianity"));
 		feedInfo.getCategories().add(category);
 		feedInfo.setAuthor("Jonathan Crosby");
-		feedInfo.setSubtitle("[subtitle");
-		feedInfo.setSummary("[summary]");
+		feedInfo.setSubtitle("Let God be true, but every man a liar as it is written... Romans 3:4");
+		feedInfo.setSummary("Let God be true, but every man a liar as it is written... Romans 3:4");
 		try {
 			feedInfo.setImage(new URL(document[3]));
 		} catch (MalformedURLException e) {
