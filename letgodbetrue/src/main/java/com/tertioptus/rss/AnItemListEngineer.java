@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import com.rometools.rome.feed.rss.Item;
+import com.tertioptus.Sol;
 
 /**
  * Default item list engineer.
@@ -12,7 +13,7 @@ import com.rometools.rome.feed.rss.Item;
  * @author Benjamin F. Paige III
  * @since Feb 21, 2019
  */
-final class AnItemListEngineer implements ItemListEngineer {
+final class AnItemListEngineer extends Sol implements ItemListEngineer {
 
 	private final ItemEngineer itemEngineer;
 
@@ -26,6 +27,7 @@ final class AnItemListEngineer implements ItemListEngineer {
 		items.forEach(itemDocument -> {
 			try {
 				add(itemDocument, itemList, host);
+				LOGGER.info(itemList.size() + " entries processed." );
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
