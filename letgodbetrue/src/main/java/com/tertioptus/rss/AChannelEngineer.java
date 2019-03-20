@@ -59,8 +59,8 @@ final class AChannelEngineer implements ChannelEngineer {
 		image.setUrl(imageValue);
 		image.setTitle("Let God Be True");
 		image.setDescription("Let God be true, but every man a liar as it is written... Romans 3:4");
-		image.setHeight(600);
-		image.setWidth(600);
+		image.setHeight(1200);
+		image.setWidth(1200);
 		return image;
 	}
 }
