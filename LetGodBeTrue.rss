@@ -12,16 +12,16 @@
     <itunes:category text="Religion &amp; Spirituality">
       <itunes:category text="Christianity" />
     </itunes:category>
-    <itunes:author>Jonathan Crosby</itunes:author>
-    <itunes:image href="https://github.com/Tertioptus/LetGodBeTrue/raw/master/Let_God_be_True_.png" />
+    <itunes:author>Church of Greenville</itunes:author>
+    <itunes:image href="https://github.com/Tertioptus/LetGodBeTrue/raw/master/KJV.jpg" />
     <itunes:keywords>Bible, KJV, King James Version, Plain preaching, The Church of Greenville, Church, Greenville, SC</itunes:keywords>
     <itunes:subtitle>Let God be true, but every man a liar as it is written... Romans 3:4</itunes:subtitle>
     <itunes:summary>Let God be true, but every man a liar as it is written... Romans 3:4</itunes:summary>
     <image>
       <title>Let God Be True</title>
-      <url>https://github.com/Tertioptus/LetGodBeTrue/raw/master/Let_God_be_True_.png</url>
-      <width>600</width>
-      <height>600</height>
+      <url>https://github.com/Tertioptus/LetGodBeTrue/raw/master/KJV.jpg</url>
+      <width>1200</width>
+      <height>1200</height>
       <description>Let God be true, but every man a liar as it is written... Romans 3:4</description>
     </image>
     <item>
