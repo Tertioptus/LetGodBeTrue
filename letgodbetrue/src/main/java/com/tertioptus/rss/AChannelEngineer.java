@@ -46,6 +46,7 @@ final class AChannelEngineer implements ChannelEngineer {
 		feedInfo.setAuthor("Church of Greenville");
 		feedInfo.setSubtitle("Let God be true, but every man a liar as it is written... Romans 3:4");
 		feedInfo.setSummary("Let God be true, but every man a liar as it is written... Romans 3:4");
+		feedInfo.setExplicit(false);
 		try {
 			feedInfo.setImage(new URL(document[3]));
 		} catch (MalformedURLException e) {
@@ -59,8 +60,8 @@ final class AChannelEngineer implements ChannelEngineer {
 		image.setUrl(imageValue);
 		image.setTitle("Let God Be True");
 		image.setDescription("Let God be true, but every man a liar as it is written... Romans 3:4");
-		image.setHeight(1200);
-		image.setWidth(1200);
+		image.setHeight(1446);
+		image.setWidth(1446);
 		return image;
 	}
 }
