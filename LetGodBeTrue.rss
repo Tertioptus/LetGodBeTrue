@@ -13,15 +13,16 @@
       <itunes:category text="Christianity" />
     </itunes:category>
     <itunes:author>Church of Greenville</itunes:author>
-    <itunes:image href="https://github.com/Tertioptus/LetGodBeTrue/raw/master/KJV.jpg" />
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://github.com/Tertioptus/LetGodBeTrue/raw/master/LGBT.jpg" />
     <itunes:keywords>Bible, KJV, King James Version, Plain preaching, The Church of Greenville, Church, Greenville, SC</itunes:keywords>
     <itunes:subtitle>Let God be true, but every man a liar as it is written... Romans 3:4</itunes:subtitle>
     <itunes:summary>Let God be true, but every man a liar as it is written... Romans 3:4</itunes:summary>
     <image>
       <title>Let God Be True</title>
-      <url>https://github.com/Tertioptus/LetGodBeTrue/raw/master/KJV.jpg</url>
-      <width>1200</width>
-      <height>1200</height>
+      <url>https://github.com/Tertioptus/LetGodBeTrue/raw/master/LGBT.jpg</url>
+      <width>1446</width>
+      <height>1446</height>
       <description>Let God be true, but every man a liar as it is written... Romans 3:4</description>
     </image>
     <item>
