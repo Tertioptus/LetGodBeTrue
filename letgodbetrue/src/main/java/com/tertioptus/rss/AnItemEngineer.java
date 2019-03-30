@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.rometools.modules.itunes.EntryInformation;
 import com.rometools.modules.itunes.EntryInformationImpl;
+import com.rometools.modules.itunes.types.Duration;
 import com.rometools.rome.feed.rss.Description;
 import com.rometools.rome.feed.rss.Enclosure;
 import com.rometools.rome.feed.rss.Item;
@@ -17,6 +18,8 @@ import com.rometools.rome.feed.rss.Item;
  * @since Feb 21, 2019
  */
 final class AnItemEngineer implements ItemEngineer {
+	
+	private static final double BIT_RATE = 0.08737056526;
 
 	public AnItemEngineer(EnclosureEngineer enclosureEngineer) {
 		this.enclosureEngineer = enclosureEngineer;
@@ -38,12 +41,20 @@ final class AnItemEngineer implements ItemEngineer {
 		entryInfo.setAuthor("Jonathan Crosby");
 		entryInfo.setSummary(itemDocument[8]);
 		entryInfo.setSubtitle(itemDocument[8]);
+		entryInfo.setDuration(duration(item));
 		item.getModules().add(entryInfo);
 		return item;
 	}
 
 	private List<Enclosure> enclosures(String[] itemDocument, int selection) {
 		return Arrays.asList(enclosureEngineer.enclosure(itemDocument[selection * 2 + 3]));
+	}
+	
+	private Duration duration(Item item) {
+		Duration duration = new Duration();
+		
+		duration.setMilliseconds((long)(BIT_RATE * item.getEnclosures().get(0).getLength()));
+		return duration;
 	}
 
 	private Description description(String[] itemDocument) {

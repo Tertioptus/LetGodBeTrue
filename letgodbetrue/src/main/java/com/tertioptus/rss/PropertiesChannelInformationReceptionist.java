@@ -11,13 +11,14 @@ public class PropertiesChannelInformationReceptionist implements ChannelInformat
 	}
 
 	public String[] document() throws Exception {
-		String[] document = new String[5];
+		String[] document = new String[6];
 		
 		document[0] = configPropertiesMapEngineer.value("language");
 		document[1] = configPropertiesMapEngineer.value("title");
 		document[2] = configPropertiesMapEngineer.value("description");
 		document[3] = configPropertiesMapEngineer.value("image");
 		document[4] = configPropertiesMapEngineer.value("host");
+		document[5] = configPropertiesMapEngineer.value("bitRate");
 		
 		return document;
 	}
