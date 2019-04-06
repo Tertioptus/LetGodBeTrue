@@ -5,3 +5,4 @@ git add LetGodBeTrue.rss
 git add size-cache.csv
 git commit -m "update"
 git push
+date +"%Y%m%d %H:%M:%S" >> run.log
