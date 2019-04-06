@@ -17,8 +17,10 @@ public final class SermonRaven extends Sol implements Raven {
 	 * @param channelInformationReceptionist
 	 */
 	public SermonRaven(Squirrel squirrel, ChannelInformationReceptionist channelInformationReceptionist) {
-		this(squirrel, channelInformationReceptionist, new AWireFeedOutputEngineer(
-				new AChannelEngineer(new AnItemListEngineer(new AnItemEngineer(new AnEnclosureEngineer())))));
+		this(squirrel, channelInformationReceptionist,
+				new AWireFeedOutputEngineer(new AChannelEngineer(
+						new AnItemListEngineer(new AnItemEngineer(new SmartEnclosureEngineer(new AnEnclosureEngineer(),
+								new LookupCacheReadingEngineer(), new LookupFileWritingEngineer()))))));
 
 	}
 
@@ -53,7 +55,7 @@ public final class SermonRaven extends Sol implements Raven {
 	public void dispatch(String filename) {
 		try {
 			wireFeedOutputEngineer.output(filename, channelInformationReceptionist.document(), squirrel.sermons());
-			
+
 			LOGGER.info("File generation complete.");
 		} catch (Exception ex) {
 			ex.printStackTrace();

@@ -46,7 +46,7 @@ final class AnItemEngineer implements ItemEngineer {
 		return item;
 	}
 
-	private List<Enclosure> enclosures(String[] itemDocument, int selection) {
+	private List<Enclosure> enclosures(String[] itemDocument, int selection) throws Exception {
 		return Arrays.asList(enclosureEngineer.enclosure(itemDocument[selection * 2 + 3]));
 	}
 	

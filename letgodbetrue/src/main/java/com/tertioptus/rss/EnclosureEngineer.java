@@ -4,6 +4,6 @@ import com.rometools.rome.feed.rss.Enclosure;
 
 public interface EnclosureEngineer {
 
-	Enclosure enclosure(String url);
+	Enclosure enclosure(String url) throws Exception;
 
 }
