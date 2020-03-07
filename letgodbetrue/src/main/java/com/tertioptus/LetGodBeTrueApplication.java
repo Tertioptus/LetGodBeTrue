@@ -13,7 +13,7 @@ import com.tertioptus.web.url.QualifyingUrlReceptionist;
 
 public class LetGodBeTrueApplication implements Application {
 	
-	private final static PropertiesMapEngineer thePropertiesMapEngineer  = 
+	private static final PropertiesMapEngineer thePropertiesMapEngineer  = 
 			new PropertiesMapEngineer("config.properties", new PropertiesResourceStreamEngineer());
 	
 	public LetGodBeTrueApplication() {
