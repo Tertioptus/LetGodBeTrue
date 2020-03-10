@@ -1,6 +1,6 @@
 package com.tertioptus.web;
 
-import java.util.stream.Stream;
+import java.util.List;
 
 /**
  * 
@@ -17,5 +17,5 @@ interface WebContentEngineer<T> {
 	 * @param url URL
 	 * @param id Containing HTML element id
 	 */
-	public Stream<T> stream(String url, String id) throws Exception;
+	public List<T> stream(String url, String id) throws Exception;
 }
