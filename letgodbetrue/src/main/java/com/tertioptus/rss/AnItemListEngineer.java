@@ -39,7 +39,6 @@ final class AnItemListEngineer extends Sol implements ItemListEngineer {
 
 		for (int i = 0; i < 3; i++) {
 			if (!itemDocument[i * 2 + 3].isEmpty()) {
-				itemDocument[i * 2 + 3] = host + itemDocument[i * 2 + 3];
 				itemList.add(itemEngineer.item(itemDocument, i));
 			}
 		}
