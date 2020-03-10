@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $(curl -sL http://www.letgodbetrue.com/sermons/index.php$(date +%s) | md5sum | cut -d ' ' -f 1)
+echo $(curl -sL https://letgodbetrue.com/sermons/index/sermons-all$(date +%s) | md5sum | cut -d ' ' -f 1)
 online_md5=$(curl -sL -H 'Cache-Control: no-cache' http://www.letgodbetrue.com/sermons/index.php$(date +%s) | md5sum | cut -d ' ' -f 1)
 local_md5="$(cat state)"
 if [ "$online_md5" == "$local_md5" ]; then
